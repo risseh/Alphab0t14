@@ -14,7 +14,7 @@ global.APIKeys = {
 	'https://zeks.me': 'riski12345678',
 }
 
-global.owner = ['6283136262784','6283136262784']
+global.owner = ['6283136262784']
 global.packname = setting.botname
 global.author = setting.ownername
 global.alphaVersion = [2, 2143, 3]
