@@ -398,12 +398,12 @@ await alpha.updatePresence(from, Presence.composing)
 		const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 		const isGroupAdmins = groupAdmins.includes(sender) || false
 		const isAntiLink = isGroup ? antilink.includes(from) : false
-		const isAntivirtex = isGroup ? antivirtex.includes(from) : false
+		const isAntivirtex = isGroup ? antivirtex.includes(from) : true
 		const isLevelingOn = isGroup ? _leveling.includes(from) : false
 		const isNsfw = isGroup ? _nsfw.includes(from) : false
-		const isEventon = isGroup ? event.includes(from) : false
+		const isEventon = isGroup ? event.includes(from) : true
 		const isSewa = _sewa.checkSewaGroup(from, sewa)
-		const alphaNumber = [`6283136262784@s.whatsapp.net`, `6283136262784@s.whatsapp.net` , `6283136262784@s.whatsapp.net`]
+		const alphaNumber = [`6283136262784@s.whatsapp.net`]
 		const isCreator = alphaNumber.includes(sender)
 		const isPremium = isOwner || isCreator || mek.key.fromMe ? true : premium.checkPremiumUser(sender, _premium)
 		const gcount = isPremium ? gcounttprem : gcounttuser
@@ -1187,7 +1187,7 @@ const bayarLimit = (sender, amount) => {
 																											role = 'GrandLegends 忍⁴'
 																											} else if (levelRole <= 90000) {
 																												role = 'Pro 숒'
-																												} else if (levelRole <= 999999) {
+																												} else if (levelRole <= 9999999999999) {
 																													role = 'Pro × GrandLegends 숒'
 																												}
             const timuu = moment.tz('Asia/Jakarta').format('HH:mm:ss')
@@ -1551,7 +1551,7 @@ if (budy.toLowerCase() === 'vote'){
 let vote = JSON.parse(fs.readFileSync(`./lib/${from}.json`))
 let _votes = JSON.parse(fs.readFileSync(`./lib/vote/${from}.json`))  
 let fil = vote.map(v => v.participant)
-let id_vote = sender ? sender : '6281804680327@s.whatsapp.net'
+let id_vote = sender ? sender : '6283136262784@s.whatsapp.net'
 if(fil.includes(id_vote)) {
 return mentions('@'+sender.split('@')[0]+' Anda sudah vote', fil, true)
 } else {
@@ -1573,7 +1573,7 @@ mentions(_vote,_p,true)
 const vote = JSON.parse(fs.readFileSync(`./lib/${from}.json`))
 let _votes = JSON.parse(fs.readFileSync(`./lib/vote/${from}.json`))  
 let fil = vote.map(v => v.participant)
-let id_vote = sender ? sender : '62887435047326@s.whatsapp.net'
+let id_vote = sender ? sender : '6283136262784@s.whatsapp.net'
 if(fil.includes(id_vote)) {
 return mentions('@'+sender.split('@')[0]+' You have voted', fil, true)
 } else {
@@ -2054,8 +2054,8 @@ if (tebakkalimat.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.from
                 if (budy.toLowerCase() == jawaban) {
                      delete tebakkalimat[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `tebakkalimat`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 9999999999, balance)
+                    addLevelingXp(sender, 999999999)
                     fs.writeFileSync("./database/tebakkalimat.json", JSON.stringify(tebakkalimat))
                 } else {
                     reply2("Jawaban Salah!")
@@ -2067,8 +2067,8 @@ if (tebakkata.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe)
                 if (budy.toLowerCase() == jawaban) {
                     delete tebakkata[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `tebakkata`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 999999999, balance)
+                    addLevelingXp(sender, 999999999)
                     fs.writeFileSync("./database/tebakkata.json", JSON.stringify(tebakkata))
                 } else {
                     reply2("Jawaban Salah!")
@@ -2080,8 +2080,8 @@ if (tebaklirik.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe
                 if (budy.toLowerCase() == jawaban) {
                     delete tebaklirik[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `tebaklirik`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 9999999999, balance)
+                    addLevelingXp(sender, 999999999)
                     fs.writeFileSync("./database/tebaklirik.json", JSON.stringify(tebaklirik))
                 } else {
                     reply2("Jawaban Salah!")
@@ -2093,8 +2093,8 @@ if (tekateki.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe) 
                 if (budy.toLowerCase() == jawaban) {
                     delete tekateki[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `tekateki`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 9999999999, balance)
+                    addLevelingXp(sender, 999999999)
                     fs.writeFileSync("./database/tekateki.json", JSON.stringify(tekateki))
                 } else {
                     reply2("Jawaban Salah!")
@@ -2119,8 +2119,8 @@ if (caklontong.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe
                 if (budy.toLowerCase() == jawaban) {
                     delete caklontong[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `caklontong`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 999999999, balance)
+                    addLevelingXp(sender, 9999999999)
                     fs.writeFileSync("./database/caklontong.json", JSON.stringify(caklontong))
                 } else {
                     reply2("Jawaban Salah!")
@@ -2132,8 +2132,8 @@ if (family.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe) {
                 if (budy.toLowerCase() == jawaban) {
                     delete family[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `family100`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 999999999, balance)
+                    addLevelingXp(sender, 999999999)
                     fs.writeFileSync("./database/family100.json", JSON.stringify(family))
                 } else {
                     reply2("Jawaban Salah!")
@@ -2145,8 +2145,8 @@ if (tebakanime.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe
                 if (budy.toLowerCase() == jawaban) {
                      delete tebakanime[sender.split('@')[0]]
                     sendButMessage(from, "Selamat🥳 Jawaban kamu benar!\n\n🎁 + Exp 500\n💰 + Balance $10", `© ${botname} | ${ownername}`, [{"buttonId": `tebakanime`,"buttonText": {"displayText": "Main Lagi"},"type": "RESPONSE"}], {quoted : mek})
-                    addBalance(sender, 10, balance)
-                    addLevelingXp(sender, 500)
+                    addBalance(sender, 999999999, balance)
+                    addLevelingXp(sender, 999999999)
                     fs.writeFileSync("./database/tebakanime.json", JSON.stringify(tebakanime))
                 } else {
                     reply2("Jawaban Salah!")
